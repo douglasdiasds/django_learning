@@ -1,5 +1,5 @@
 from django.urls import path
-from .views.views import StudentViewSet
+from .views.views import EnrollmentViewSet
 
 _list = {'get': 'list',
          'post': 'create',
@@ -10,6 +10,6 @@ _edit ={'put': 'update'}
 _delete ={'delete': 'destroy'}
 
 urlpatterns = [
-    path('', StudentViewSet.as_view(_list), name = 'list'),
-    path('/<uuid:pk>', StudentViewSet.as_view(_edit), name = 'update'),
+    path('', EnrollmentViewSet.as_view(_list), name = 'list'),
+    path('/<uuid:pk>', EnrollmentViewSet.as_view(_edit), name = 'update'),
 ]
