@@ -19,5 +19,6 @@ from students.views import StudentViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('students', include('students.urls'))
+    path('students', include('students.urls')),
+    path('courses', include('courses.urls'))
 ]
