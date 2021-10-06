@@ -18,7 +18,7 @@ from django.urls import path, include
 from students.views import StudentViewSet
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('students', include('students.urls')),
     path('courses', include('courses.urls')),
     path('enrollments', include('enrollments.urls'))

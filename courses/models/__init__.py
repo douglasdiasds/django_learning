@@ -1,1 +1,1 @@
-from .models import Course
+from courses.models.course import Course

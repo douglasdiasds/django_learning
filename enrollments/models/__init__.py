@@ -1,1 +1,1 @@
-from .models import Enrollment
+from enrollments.models.enrollment import Enrollment

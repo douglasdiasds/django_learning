@@ -1,1 +1,2 @@
-from .models import Student
+from students.models.student import Student
+
