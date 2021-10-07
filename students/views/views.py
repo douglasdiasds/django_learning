@@ -13,5 +13,4 @@ class StudentViewSet(viewsets.ModelViewSet):
         return StudentSerializer
 
     def list(self, request, *args, **kwargs):
-        print("cagando tudo")
         return super(StudentViewSet, self).list(request, *args, **kwargs)

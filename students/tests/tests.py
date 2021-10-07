@@ -8,7 +8,7 @@ from rest_framework.test import APIClient
 from students.models import Student
 
 
-class CourseViewsetTestCase(TestCase):
+class StudentViewsetTestCase(TestCase):
 
     def setUp(self):
         self.client = APIClient()
@@ -47,7 +47,7 @@ class CourseViewsetTestCase(TestCase):
 
     def test_update_student(self):
         """
-        PATCH /courses/<id>
+        PATCH /students/<id>
         """
         data = {
             "name": "Student Updated Name"
@@ -60,17 +60,17 @@ class CourseViewsetTestCase(TestCase):
 
     def test_delete_student(self):
         """
-        DELETE /courses/<id>
+        DELETE /students/<id>
         """
         response = self.client.delete(reverse('students-detail', args=[str(self.course.id)]))
         self.assertEqual(response.status_code, 204)
 
     def test_error_create_new_student(self):
         """
-        POST /courses
+        POST /students
         """
         data = {
-            "duration": 10
+            "name": "Student",
         }
         response = self.client.post(self.url, data=data, format='json')
         self.assertEqual(response.status_code, 400)

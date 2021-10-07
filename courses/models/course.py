@@ -11,6 +11,10 @@ class Course(models.Model):
     holder_image = models.URLField(max_length=200, null=False, default="http://keeps.com.br")
     created_date = models.DateTimeField(verbose_name="Created Date", auto_now_add=True, null=True, blank=True)
     updated_date = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
+    #content = models.ForeignKey(Content, verbose_name(?),on_delete=models.PROTECT, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = "Course"

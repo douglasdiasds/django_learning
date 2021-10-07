@@ -5,5 +5,9 @@ from enrollments.serializer.serializer import EnrollmentSerializer
 
 
 class EnrollmentViewSet(viewsets.ModelViewSet):
-    serializer_class = EnrollmentSerializer
-    queryset = Enrollment.objects.all()
+
+    def get_queryset(self):
+        return Enrollment.objects.all()
+
+    def get_serializer_class(self):
+        return EnrollmentSerializer
