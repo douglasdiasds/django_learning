@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
     'enrollments.apps.EnrollmentsConfig',
+    'content.apps.ContentConfig'
 ]
 
 DJANGO_SETTINGS_MODULE = [
