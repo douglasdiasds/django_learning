@@ -2,8 +2,6 @@ import uuid
 
 from django.db import models
 
-from content.models import Content
-
 
 class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -13,7 +11,6 @@ class Course(models.Model):
     holder_image = models.URLField(max_length=200, null=False, default="http://keeps.com.br")
     created_date = models.DateTimeField(verbose_name="Created Date", auto_now_add=True, null=True, blank=True)
     updated_date = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
-    content = models.ForeignKey(Content, verbose_name="Content", on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
         return self.name

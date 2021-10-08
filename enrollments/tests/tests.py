@@ -20,7 +20,6 @@ class EnrollmentViewsetTestCase(TestCase):
         self.headers = {}
         self.url = reverse('enrollments-list')
 
-
     def test_enrollment_list(self):
         """
         #GET /enrollments
@@ -34,7 +33,7 @@ class EnrollmentViewsetTestCase(TestCase):
         #GET /enrollments/<id>
         """
         response = self.client.get(reverse('enrollment-detail', args=[str(self.enrollment.id)]),
-                                           **self.headers, format='json').json()
+                                   **self.headers, format='json').json()
         self.assertEqual(len(response), 7)
 
     def test_create_new_enrollment(self):
