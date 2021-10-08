@@ -2,8 +2,7 @@ from django.urls import path
 from .views.views import CourseViewSet, CourseContentViewSet
 
 _list = {'get': 'list',
-         'post': 'create',
-         'put': 'update'}
+         'post': 'create'}
 
 _edit_and_remove = {'get': 'retrieve',
                     'put': 'update',

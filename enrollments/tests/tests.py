@@ -75,7 +75,7 @@ class EnrollmentViewsetTestCase(TestCase):
         #POST /enrollments
         """
         data = {
-            "duration": 10
+            "duration2": 10
         }
         response = self.client.post(self.url, data=data, format='json')
         self.assertEqual(response.status_code, 400)

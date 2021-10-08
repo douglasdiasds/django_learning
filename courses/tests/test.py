@@ -28,9 +28,12 @@ class CourseViewsetTestCase(TestCase):
         """
         GET /courses/<id>
         """
-        response = self.client.get(reverse('courses-detail', args=[str(self.course.id)]),
-                                           **self.headers, format='json').json()
-        self.assertEqual(len(response), 7)
+        response = self.client.get(
+            reverse('courses-detail', args=[str(self.course.id)]),
+            **self.headers,
+            format='json'
+        ).json()
+        self.assertEqual(len(response), 8)
 
     def test_create_new_course(self):
         """
@@ -39,10 +42,10 @@ class CourseViewsetTestCase(TestCase):
         data = {
             "name": "New Course Test",
             "duration": 10,
-            "holder_image": "http://keeps.com.br"
+            "holder_image": "https://keeps.com.br"
         }
         response = self.client.post(self.url, data=data, format='json').json()
-        self.assertEqual(len(response), 7)
+        self.assertEqual(len(response), 8)
         self.assertEqual(response['name'], data['name'])
         self.assertEqual(response['duration'], data['duration'])
 
@@ -53,10 +56,13 @@ class CourseViewsetTestCase(TestCase):
         data = {
             "name": "Course Updated Name"
         }
-        response = self.client.patch(reverse('courses-detail', args=[str(self.course.id)]), data=data,
-                                     **self.headers, format='json').json()
+        response = self.client.patch(
+            reverse('courses-detail', args=[str(self.course.id)]),
+            data=data,
+            **self.headers, format='json'
+        ).json()
 
-        self.assertEqual(len(response), 7)
+        self.assertEqual(len(response), 8)
         self.assertEqual(response['name'], data['name'])
 
     def test_delete_course(self):
