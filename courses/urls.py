@@ -13,5 +13,5 @@ _edit_and_remove = {'get': 'retrieve',
 urlpatterns = [
     path('', CourseViewSet.as_view(_list), name='courses-list'),
     path('/<uuid:pk>', CourseViewSet.as_view(_edit_and_remove), name='courses-detail'),
-    #path('/<uuid:pk>/cotents', CourseViewSet.as_view(_edit_and_remove), name='courses-contents'),
+    path('/<uuid:pk>/cotents', CourseContentViewSet.as_view(_edit_and_remove), name='courses-contents'),
 ]
