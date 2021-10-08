@@ -28,7 +28,7 @@ OS METODOS SAO:
 
 TODO list:
     - criar um serviço para calcular o tempo de uma missão baseado nos tempos do conteúdos
-    - chamar o serviço acima usando django.signals
+    - chamar o serviço acima usando django.signals(observable)
     - criar um serviço de matrícula para validar:
         - se o existe matrícula em andamento, não permitir uma nova matrícula
         - criar um serviço para finalizar a matrícula

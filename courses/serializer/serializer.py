@@ -11,6 +11,12 @@ class CourseSerializer(serializers.ModelSerializer):
 
 
 class CourseContentListSerializer(serializers.ModelSerializer):
+    """
+    GET
+    Serializador de LISTAGEM
+
+    depth = Recebe um valor inteiro que indica o quão profundo no relacionamento o serializador deve ir antes de retornar uma representação do dados
+    """
     class Meta:
         model = CourseContent
         fields = '__all__'
@@ -18,6 +24,10 @@ class CourseContentListSerializer(serializers.ModelSerializer):
 
 
 class CourseContentSerializer(serializers.ModelSerializer):
+    """
+    POST
+    Serializador de INSERÇÃO
+    """
     class Meta:
         model = CourseContent
         fields = '__all__'

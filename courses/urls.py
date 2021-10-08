@@ -13,9 +13,11 @@ _only_retrieve_and_delete = {'get': 'retrieve',
                              'delete': 'destroy'}
 
 urlpatterns = [
+    #ROTAS P/ MODELO Course
     path('', CourseViewSet.as_view(_list), name='courses-list'),
     path('/<uuid:pk>', CourseViewSet.as_view(_detail), name='courses-detail'),
 
+    #ROTAS P/ MODELO DE RELACIONAMENTO CourseContent
     path('/<uuid:pk>/contents', CourseContentViewSet.as_view(_list), name='course-contents-list'),
     path('/<uuid:pk>/contents/<uuid:content_id>', CourseContentViewSet.as_view(_only_retrieve_and_delete), name='course-contents-detail'),
 ]
