@@ -5,6 +5,7 @@ from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_204_NO_CONTENT, HTTP_
 from courses.models import Course, CourseContent
 from courses.serializer.serializer import CourseSerializer, CourseContentSerializer, CourseContentListSerializer
 
+from courses.services.service import CourseService
 
 class CourseViewSet(viewsets.ModelViewSet):
 
@@ -15,8 +16,7 @@ class CourseViewSet(viewsets.ModelViewSet):
         return CourseSerializer
 
 
-
-class CourseContentViewSet(viewsets.ModelViewSet):
+class  CourseContentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         """

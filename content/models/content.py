@@ -15,7 +15,6 @@ class Content(models.Model):
     url = models.URLField(verbose_name="URL", max_length=1000)
     content_type = models.CharField(verbose_name="Content Type", choices=TYPE_CHOICES, max_length=1)
     duration = models.IntegerField(verbose_name="Duration", default=0)
-
     created_date = models.DateTimeField(verbose_name="Created Date", auto_now_add=True)
     updated_date = models.DateTimeField(verbose_name="Updated Date", auto_now=True)
 
