@@ -7,8 +7,12 @@ class CourseService:
 
     def calculate_duration(self, instance):
         duration = 0
-        for content in instance.course.coursecontent_set(): ##existem métodos como este 'coursecontent_set' que apontam para os items correspondentes a FK de instance, neste caso course & content
-            duration += content.duration
+
+        for course_content in instance.course.coursecontent_set.all():
+            duration += course_content.content.duration
+
+        instance.course.duration = duration
+        instance.course.save()
 
 
 

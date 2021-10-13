@@ -1,8 +1,7 @@
 from django.core.signals import request_finished
 from django.dispatch import receiver
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 
-from content.models.content import Content
 from courses.services.service import CourseService
 from courses.models.course_content import CourseContent
 
@@ -14,5 +13,5 @@ def receiving_content_request(sender,  instance, created, **kwargs):
     #content_id = kwargs['instance'].content_id
     #content_couser_id = kwargs['instance'].id
     service = CourseService()
-    instance.course.coursecontent_set.all()
+    #instance.course.coursecontent_set.all()
     service.calculate_duration(instance) ##O INSTANCE TEM TDS AS INFORMAÇÕES QUE EU PRECISO
