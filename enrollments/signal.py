@@ -9,4 +9,4 @@ from enrollments.services.service import EnrollmentsService
 def check_enrollment(sender,  instance, created, **kwargs):
     print("Request finished!")
     service = EnrollmentsService()
-    service.calculate_duration(instance, sender)
+    service.check_enrollment(instance, sender)
