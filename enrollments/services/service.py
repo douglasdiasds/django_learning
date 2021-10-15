@@ -19,8 +19,20 @@ class EnrollmentsService:
 
             if enrollment.score < 0.7:
                 enrollment.status = "RE"
+                #SETAR 'date_close' p/ data da maquina no momento da finalizaçao
 
             else:
                 enrollment.status = "AP"
+                # SETAR 'date_close' p/ data da maquina no momento da finalizaçao
+        enrollment.save()
+
+    @staticmethod
+    def restart_enrollment(enrollment_id):
+
+        for enrollment in Enrollment.objects.filter(id=enrollment_id):
+            if enrollment.status == "AP" or "ER":
+                enrollment.date_close = None
+                enrollment.score = 0.0
+                enrollment.status = "AN"
 
         enrollment.save()

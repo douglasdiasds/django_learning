@@ -17,7 +17,7 @@ class Enrollment(models.Model):
     student = models.ForeignKey(Student, related_name='students', on_delete=models.PROTECT)
     course = models.ForeignKey(Course, related_name='courses', on_delete=models.PROTECT)
     date_enroll = models.DateTimeField(verbose_name="Created Date", auto_now_add=True)
-    date_close = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
+    date_close = models.DateTimeField(verbose_name="Updated Date", auto_now=False, null=True, blank=True)
     status = models.CharField(choices=STATUS_CHOICES, max_length=2, default="AN")
     #score = models.DecimalField(blank=True, decimal_places=1, max_digits=2, null=True)
     score = models.FloatField(blank=True, null=True)

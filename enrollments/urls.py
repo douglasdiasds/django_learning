@@ -1,5 +1,5 @@
 from django.urls import path
-from .views.views import EnrollmentViewSet, FinishEnrollmentViewSet
+from .views.views import EnrollmentViewSet, FinishEnrollmentViewSet, RestartEnrollmentViewSet
 
 _list = {'get': 'list',
          'post': 'create',
@@ -13,5 +13,6 @@ _edit_and_remove = {'get': 'retrieve',
 urlpatterns = [
     path('', EnrollmentViewSet.as_view(_list), name='enrollments-list'),
     path('/<uuid:pk>', EnrollmentViewSet.as_view(_edit_and_remove), name='enrollment-detail'),
-    path('/finish/<uuid:pk>', FinishEnrollmentViewSet.as_view(_edit_and_remove), name='enrollment-detail'),
+    path('/finish/<uuid:pk>', FinishEnrollmentViewSet.as_view(_edit_and_remove), name='enrollment-finish'),
+    path('/restart/<uuid:pk>', RestartEnrollmentViewSet.as_view(_edit_and_remove), name='enrollment-restart'),
 ]
