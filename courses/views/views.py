@@ -23,7 +23,7 @@ class  CourseContentViewSet(viewsets.ModelViewSet):
         Salva a primary key em uma variável & passa a mesma como argumento p/ o filtro
         """
         course_id = self.kwargs['pk']
-        return CourseContent.objects.filter(course_id=course_id)#ONDE O PRIMEIRO 'course_id' FOI DEFINIDO?
+        return CourseContent.objects.filter(course_id=course_id)
 
     def get_serializer_class(self):
         """

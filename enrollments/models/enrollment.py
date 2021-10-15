@@ -19,7 +19,8 @@ class Enrollment(models.Model):
     date_enroll = models.DateTimeField(verbose_name="Created Date", auto_now_add=True)
     date_close = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
     status = models.CharField(choices=STATUS_CHOICES, max_length=2, default="AN")
-    score = models.DecimalField(blank=True, decimal_places=1, max_digits=2, null=True)
+    #score = models.DecimalField(blank=True, decimal_places=1, max_digits=2, null=True)
+    score = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return self.id

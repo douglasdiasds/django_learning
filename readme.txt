@@ -31,8 +31,8 @@ TODO list:
     - chamar o serviço acima usando django.signals(observable) ✓
     - criar um serviço de matrícula para validar:
         - se o existe matrícula em andamento, não permitir uma nova matrícula ✓
-        - criar um serviço para finalizar a matrícula
-        - se a nota for menor que 0.7 reprovar a matrícular ao finalizar
+        - criar um serviço para finalizar a matrícula ✓
+        - se a nota for menor que 0.7 reprovar a matrícular ao finalizarz ✓
         - reiniciar uma matrícula (remover data de conclusão e nota):
             - matrícula só pode ser reinicializada se tiver concluída
             - matrícula só pode ser reinicializada se o curso não é obrigatório
