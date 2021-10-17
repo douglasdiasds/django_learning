@@ -1,7 +1,15 @@
+from datetime import datetime
+
 from enrollments.models.enrollment import Enrollment
 
 
 class EnrollmentsService:
+    """
+    Método que checa se a matrícula que está sendo registrada ñ possuiu o msm estudante que outra ja registrada e que está em andamento
+
+    instace:
+    sender:
+    """
     @staticmethod
     def check_enrollment(instance, sender):
         count = 0
@@ -13,19 +21,30 @@ class EnrollmentsService:
                 sender.objects.filter(id=instance.id).delete()
                 break
 
+    """
+    Método que checa se a matrícula que está sendo registrada ñ possuiu o msm estudante que outra ja registrada e que está em andamento
+
+    enrollment_id: id da matricula
+    """
     @staticmethod
     def finish_enrollment(enrollment_id):
         for enrollment in Enrollment.objects.filter(id=enrollment_id):
 
             if enrollment.score < 0.7:
                 enrollment.status = "RE"
-                #SETAR 'date_close' p/ data da maquina no momento da finalizaçao
+                enrollment.date_close = datetime.now()
 
             else:
                 enrollment.status = "AP"
-                # SETAR 'date_close' p/ data da maquina no momento da finalizaçao
+                enrollment.date_close = datetime.now()
+
         enrollment.save()
 
+    """
+        Método que checa se a matrícula que está sendo registrada ñ possuiu o msm estudante que outra ja registrada e que está em andamento
+
+        enrollment_id: id da matricula
+        """
     @staticmethod
     def restart_enrollment(enrollment_id):
 

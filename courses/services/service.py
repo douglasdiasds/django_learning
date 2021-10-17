@@ -1,5 +1,10 @@
 class CourseService:
 
+    """
+    Serviço que calcula a duração de um 'course' de acordo com a duração de seus respectivos 'contents'
+
+    instance: contém as informações do curso, duração, conteúdos e a duração dos mesmos.
+    """
     def calculate_duration(self, instance):
         duration = 0
 
