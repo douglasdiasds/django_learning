@@ -12,6 +12,7 @@ class Course(models.Model):
     created_date = models.DateTimeField(verbose_name="Created Date", auto_now_add=True, null=True, blank=True)
     updated_date = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
 
+
     def __str__(self):
         return self.name
 
