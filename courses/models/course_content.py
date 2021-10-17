@@ -13,7 +13,7 @@ class CourseContent(models.Model):
     order = models.IntegerField(default=0)
     created_date = models.DateTimeField(verbose_name="Created Date", auto_now_add=True, null=True, blank=True)
     updated_date = models.DateTimeField(verbose_name="Updated Date", auto_now=True, null=True, blank=True)
-    mandatory = models.BooleanField(verbose_name="Mandatory", null=True, blank=True)
+
 
     class Meta:
         verbose_name = "CourseContent"

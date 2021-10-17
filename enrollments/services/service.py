@@ -49,7 +49,7 @@ class EnrollmentsService:
     def restart_enrollment(enrollment_id):
 
         for enrollment in Enrollment.objects.filter(id=enrollment_id):
-            if enrollment.status == "AP" or "ER":
+            if (enrollment.status == "AP" or "ER") and (enrollment.course.mandatory == False):
                 enrollment.date_close = None
                 enrollment.score = 0.0
                 enrollment.status = "AN"
