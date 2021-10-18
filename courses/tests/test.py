@@ -17,7 +17,7 @@ class CourseViewsetTestCase(TestCase):
         self.course = mommy.make(Course, id=uuid4(), name='Course 1')
         self.headers = {}
         self.url = reverse('courses-list')
-        self.count_course_fields = 7
+        self.count_course_fields = 8
 
     def test_course_list(self):
         """
